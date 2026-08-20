@@ -112,8 +112,23 @@ docker-compose down -v       # stop and wipe DB volume
 
 ## 🖼️ UI/UX Reference
 
-See `docs/ui-ux-mockup.png` for the full design reference (Home, Menu, Product Details,
-Cart, Checkout, Payment, Order Tracking, Order Success screens).
+<img width="1912" height="712" alt="image" src="https://github.com/user-attachments/assets/ca5c84e4-d2eb-4418-afcc-64221ccffa49" />
 
-<img width="848" height="553" alt="image" src="https://github.com/user-attachments/assets/81b7fa2a-b96b-436b-bf54-114f4ab15a2e" />
+<img width="1918" height="855" alt="image" src="https://github.com/user-attachments/assets/1ecbfc81-5678-4378-8a8e-730d931ac5d8" />
+
+<img width="1566" height="701" alt="image" src="https://github.com/user-attachments/assets/31944c19-ff6b-464f-aa1e-0fd228d5692a" />
+
+<img width="1207" height="712" alt="image" src="https://github.com/user-attachments/assets/a9eafd89-8996-4580-8063-0a9995dbe686" />
+
+<img width="1897" height="663" alt="image" src="https://github.com/user-attachments/assets/2001080f-910e-4254-9d1d-0168e674189c" />
+
+<img width="1895" height="580" alt="image" src="https://github.com/user-attachments/assets/17f33033-2dfb-46fc-8fd7-d042df86cb28" />
+
+
+
+
+
+
+
+
 
