@@ -5,31 +5,8 @@ architecture using Docker Compose — Nginx (frontend) → Spring Boot (backend)
 
 ## 📐 Architecture
 
-```
-USER
-  |
-  | HTTP :80
-  v
-┌─────────────────┐
-│  NGINX           │
-│  Frontend         │
-│  Container         │
-└────────┬────────┘
-         | /api/*  (reverse proxy)
-         | HTTP :8080
-         v
-┌─────────────────┐
-│  JAVA APP         │
-│  Spring Boot       │
-│  Container         │
-└────────┬────────┘
-         | PostgreSQL :5432
-         v
-┌─────────────────┐
-│  POSTGRESQL       │
-│  DB Container       │
-└─────────────────┘
-```
+<img width="848" height="553" alt="WhatsApp Image 2026-08-20 at 2 23 15 PM" src="https://github.com/user-attachments/assets/6e0b5500-5096-47ec-9e8c-33f4b6d0b070" />
+
 
 - **Frontend**: Static HTML/CSS/JS served by Nginx. Nginx reverse-proxies any `/api/*`
   request to the backend container over the internal Docker network.
