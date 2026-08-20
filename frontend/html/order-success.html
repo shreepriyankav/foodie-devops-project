@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Foodie - Order Success</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">🍔 Foodie</div>
+    <div class="nav-links"><a href="index.html">Home</a><a href="menu.html">Menu</a></div>
+    <div class="nav-right"><div class="location">📍 Coimbatore ▾</div></div>
+  </header>
+
+  <section class="success-page">
+    <div class="success-icon">✅</div>
+    <h1>Order Placed Successfully!</h1>
+    <p>Thank you for your order. Your delicious food is on its way.</p>
+
+    <div class="order-summary-box">
+      <div class="row"><span>Order ID</span><span>#ORD123456789</span></div>
+      <div class="row"><span>Date</span><span id="order-date"></span></div>
+      <div class="row"><span>Total Paid</span><span id="order-total">₹0</span></div>
+      <div class="row"><span>Payment Method</span><span>UPI</span></div>
+    </div>
+
+    <button class="next-btn" style="max-width:300px;margin:0 auto 12px;display:block;" onclick="location.href='order-tracking.html'">Track Order</button>
+    <button class="next-btn" style="max-width:300px;margin:0 auto;display:block;background:#fff;color:#ff5722;border:1px solid #ff5722;" onclick="clearCartAndGoHome()">Continue Ordering</button>
+  </section>
+
+  <div class="footer-note">Foodie Demo · Nginx + Spring Boot + PostgreSQL</div>
+
+  <script src="js/app.js"></script>
+  <script>
+    const cart = getCart();
+    const subtotal = cart.reduce((s,i)=>s+i.price*i.qty,0);
+    const total = subtotal + (cart.length ? 30 : 0);
+    document.getElementById("order-total").textContent = "₹" + total;
+    document.getElementById("order-date").textContent = new Date().toLocaleString();
+
+    function clearCartAndGoHome() {
+      localStorage.removeItem("foodie_cart");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

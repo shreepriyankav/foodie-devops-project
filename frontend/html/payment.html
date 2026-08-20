@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Foodie - Payment</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">🍔 Foodie</div>
+    <div class="nav-links"><a href="index.html">Home</a><a href="menu.html">Menu</a></div>
+    <div class="nav-right"><div class="location">📍 Coimbatore ▾</div></div>
+  </header>
+
+  <section class="payment-page">
+    <h2 style="text-align:center;margin-bottom:8px;">Payment — Step 2 of 3</h2>
+    <div class="step-indicator">
+      <div class="step-dot active"></div>
+      <div class="step-dot active"></div>
+      <div class="step-dot"></div>
+    </div>
+
+    <div class="form-card">
+      <h3>Payment Methods</h3>
+      <div class="pay-option selected"><div>💳 UPI (PhonePe / GPay / Paytm)</div></div>
+      <div class="pay-option"><div>💳 Credit / Debit Card</div></div>
+      <div class="pay-option"><div>🏦 Net Banking</div></div>
+      <div class="pay-option"><div>💵 Cash on Delivery</div></div>
+    </div>
+
+    <div class="cart-summary">
+      <div class="row total"><span>Total Payable</span><span id="total-payable">₹0</span></div>
+      <button class="next-btn" onclick="location.href='order-success.html'">Pay Now</button>
+    </div>
+  </section>
+
+  <div class="footer-note">Foodie Demo · Nginx + Spring Boot + PostgreSQL</div>
+
+  <script src="js/app.js"></script>
+  <script>
+    const cart = getCart();
+    const subtotal = cart.reduce((s,i)=>s+i.price*i.qty,0);
+    const total = subtotal + (cart.length ? 30 : 0);
+    document.getElementById("total-payable").textContent = "₹" + total;
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+version: "3.9"
+
+services:
+  # 1. NGINX - Frontend Container
+  frontend:
+    build: ./frontend
+    container_name: foodie-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - foodie-network
+
+  # 2. Spring Boot - Java App Container
+  backend:
+    build: ./backend
+    container_name: foodie-backend
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: fooddb
+      DB_USER: foodie
+      DB_PASSWORD: foodie123
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - foodie-network
+
+  # 3. PostgreSQL - DB Container
+  db:
+    image: postgres:16-alpine
+    container_name: foodie-db
+    environment:
+      POSTGRES_DB: fooddb
+      POSTGRES_USER: foodie
+      POSTGRES_PASSWORD: foodie123
+    volumes:
+      - foodie-db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U foodie -d fooddb"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - foodie-network
+
+networks:
+  foodie-network:
+    driver: bridge
+
+volumes:
+  foodie-db-data:

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Foodie - Your Cart</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">🍔 Foodie</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="#">Orders</a>
+      <a href="#">Offers</a>
+    </div>
+    <div class="nav-right">
+      <div class="location">📍 Coimbatore ▾</div>
+      <div class="cart-icon">🛒 <span id="cart-count" class="badge">0</span></div>
+    </div>
+  </header>
+
+  <section class="cart-page">
+    <h2>Your Cart</h2>
+    <div id="cart-items">Cart is empty. Go to Menu and add items!</div>
+    <div class="cart-summary">
+      <div class="row"><span>Subtotal</span><span id="subtotal">₹0</span></div>
+      <div class="row"><span>Delivery Fee</span><span>₹30</span></div>
+      <div class="row total"><span>Total</span><span id="total">₹0</span></div>
+      <button class="checkout-btn" onclick="location.href='checkout.html'">Proceed to Checkout</button>
+    </div>
+  </section>
+
+  <div class="footer-note">Foodie Demo · Nginx + Spring Boot + PostgreSQL</div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

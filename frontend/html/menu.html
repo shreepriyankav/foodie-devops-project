@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Foodie - Menu</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">🍔 Foodie</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="menu.html" class="active">Menu</a>
+      <a href="#">Orders</a>
+      <a href="#">Offers</a>
+    </div>
+    <div class="nav-right">
+      <div class="location">📍 Coimbatore ▾</div>
+      <div class="search-icon">🔍</div>
+      <div class="cart-icon" onclick="location.href='cart.html'">🛒 <span id="cart-count" class="badge">0</span></div>
+    </div>
+  </header>
+
+  <section class="menu-page">
+    <h2>Menu</h2>
+    <div id="menu-list" class="menu-list">Loading menu from Spring Boot API...</div>
+  </section>
+
+  <div class="footer-note">Foodie Demo · Nginx + Spring Boot + PostgreSQL</div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

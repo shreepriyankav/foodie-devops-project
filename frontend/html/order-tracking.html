@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Foodie - Order Tracking</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">🍔 Foodie</div>
+    <div class="nav-links"><a href="index.html">Home</a><a href="menu.html">Menu</a></div>
+    <div class="nav-right"><div class="location">📍 Coimbatore ▾</div></div>
+  </header>
+
+  <section class="track-page">
+    <h2 style="text-align:center;margin-bottom:6px;">Order Tracking</h2>
+    <p style="text-align:center;color:#888;margin-bottom:30px;">#ORD123456789</p>
+
+    <div class="track-status">
+      <div class="track-item">
+        <div class="track-dot">✓</div>
+        <div class="track-info"><h4>Order Confirmed</h4><p>10:30 AM</p></div>
+      </div>
+      <div class="track-item">
+        <div class="track-dot">✓</div>
+        <div class="track-info"><h4>Preparing Your Order</h4><p>10:35 AM</p></div>
+      </div>
+      <div class="track-item">
+        <div class="track-dot">●</div>
+        <div class="track-info"><h4>Out for Delivery</h4><p>10:50 AM</p></div>
+      </div>
+      <div class="track-item">
+        <div class="track-dot pending">○</div>
+        <div class="track-info"><h4 style="color:#999;">Delivered</h4><p>Estimated 11:00 AM</p></div>
+      </div>
+    </div>
+
+    <div class="cart-summary" style="margin-top:30px;">
+      <button class="next-btn" onclick="location.href='order-success.html'">View Order Summary</button>
+    </div>
+  </section>
+
+  <div class="footer-note">Foodie Demo · Nginx + Spring Boot + PostgreSQL</div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
