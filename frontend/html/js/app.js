@@ -43,19 +43,20 @@ async function loadDishes(targetId, limit) {
 const FOOD_IMAGES = {
   "Margherita Pizza": "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=500&q=80",
   "Chicken Burger": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&q=80",
-  "Chicken Biryani": "https://images.unsplash.com/photo-1563379091339-03246963d96a?w=500&q=80",
+  "Chicken Biryani": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=500&q=80",
   "Pasta Alfredo": "https://images.unsplash.com/photo-1645112411341-6c4fd023714a?w=500&q=80",
   "Chocolate Cake": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500&q=80"
 };
+const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&q=80";
 function imageFor(d) {
-  return d.imageUrl || FOOD_IMAGES[d.name] || "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&q=80";
+  return d.imageUrl || FOOD_IMAGES[d.name] || FALLBACK_IMAGE;
 }
 
 function renderDishes(target, dishes, mode) {
   if (mode === "menu-list") {
     target.innerHTML = dishes.map(d => `
       <div class="menu-item" onclick="location.href='product.html?id=${d.id}'">
-        <img src="${imageFor(d)}" alt="${d.name}">
+        <img src="${imageFor(d)}" alt="${d.name}" onerror="this.onerror=null;this.src='${FALLBACK_IMAGE}'">
         <div class="menu-item-info">
           <h3>${d.name}</h3>
           <p>${d.description || ""}</p>
@@ -67,7 +68,7 @@ function renderDishes(target, dishes, mode) {
   } else {
     target.innerHTML = dishes.map(d => `
       <div class="dish-card" onclick="location.href='product.html?id=${d.id}'">
-        <img src="${imageFor(d)}" alt="${d.name}">
+        <img src="${imageFor(d)}" alt="${d.name}" onerror="this.onerror=null;this.src='${FALLBACK_IMAGE}'">
         <h3>${d.name}</h3>
         <p>⭐ ${d.rating || "4.5"} · ₹${d.price}</p>
       </div>
